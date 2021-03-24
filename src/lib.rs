@@ -1,12 +1,6 @@
-use wasm_bindgen::prelude::*;
+use moxie_dom::{elements::html::div, html_element, interfaces::node::Parent, prelude::document};
+use wasm_bindgen::prelude::{wasm_bindgen, *};
 use web_sys::console;
-use moxie_dom::{
-    elements::html::{div, p},
-    html_element,
-    interfaces::node::Parent,
-    prelude::{state, document},
-};
-use wasm_bindgen::prelude::wasm_bindgen;
 
 html_element! {
     <ui5-button>
@@ -34,9 +28,6 @@ pub fn main_js() -> Result<(), JsValue> {
     console::log_1(&JsValue::from_str("Release"));
 
     moxie_dom::boot(document().body(), || {
-        let (expand_count, inc_on_expand) = state(|| 0);
-        let (selected_count, inc_on_select) = state(|| 0);
-
         div().child(ui5_button().child("Hello, world!"))
     });
 
