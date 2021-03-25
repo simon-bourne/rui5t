@@ -1,19 +1,6 @@
-use moxie_dom::{elements::html::div, html_element, interfaces::node::Parent, prelude::document};
 use wasm_bindgen::prelude::{wasm_bindgen, *};
 use web_sys::console;
 
-html_element! {
-    <ui5-button>
-    categories { Flow }
-
-    children {
-        categories {
-            Flow
-        }
-    }
-}
-
-// This is like the `main` function, except for JavaScript.
 #[wasm_bindgen(start)]
 pub fn main_js() -> Result<(), JsValue> {
     // This provides better error messages in debug mode.
@@ -27,9 +14,7 @@ pub fn main_js() -> Result<(), JsValue> {
     #[cfg(not(debug_assertions))]
     console::log_1(&JsValue::from_str("Release"));
 
-    moxie_dom::boot(document().body(), || {
-        div().child(ui5_button().child("Hello, world!"))
-    });
-
+    rui5t::run();
+    
     Ok(())
 }

@@ -1,0 +1,14 @@
+[package]
+name = "rui5t"
+description = "Rust binding for UI5"
+version = "0.1.0"
+authors = ["Simon Bourne <simonbourne@gmail.com>"]
+categories = ["wasm"]
+edition = "2018"
+
+[dependencies]
+mox = { path = "../../../my-forks/moxie/mox" }
+topo = { path = "../../../my-forks/moxie/topo" }
+moxie = { path = "../../../my-forks/moxie" }
+moxie-dom = { path = "../../../my-forks/moxie/dom" }
+wasm-bindgen = "0.2.45"
