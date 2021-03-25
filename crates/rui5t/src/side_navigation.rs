@@ -88,6 +88,8 @@ impl Item {
 impl NodeBuilder for SideNavigation {
     type Target = Self;
 
+    // TODO: Take a good look at the internals of moxie, and understand how this works.
+    #[topo::nested]
     fn build(self) -> Self::Target {
         self
     }
