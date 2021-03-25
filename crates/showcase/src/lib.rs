@@ -1,3 +1,5 @@
+use moxie_dom::{elements::html::div, interfaces::node::Parent, prelude::document};
+use rui5t::side_navigation::{Item, SideNavigation};
 use wasm_bindgen::prelude::{wasm_bindgen, *};
 use web_sys::console;
 
@@ -14,7 +16,12 @@ pub fn main_js() -> Result<(), JsValue> {
     #[cfg(not(debug_assertions))]
     console::log_1(&JsValue::from_str("Release"));
 
-    rui5t::run();
-    
+    moxie_dom::boot(document().body(), || {
+        div().child(SideNavigation::new(vec![
+            Item::text("Item 0"),
+            Item::text("Item 1"),
+        ]))
+    });
+
     Ok(())
 }

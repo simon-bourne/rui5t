@@ -510,6 +510,7 @@ dependencies = [
 name = "rui5t"
 version = "0.1.0"
 dependencies = [
+ "augdom",
  "mox",
  "moxie",
  "moxie-dom",
@@ -524,6 +525,7 @@ dependencies = [
  "console_error_panic_hook",
  "futures 0.1.31",
  "js-sys",
+ "moxie-dom",
  "rui5t",
  "wasm-bindgen",
  "wasm-bindgen-futures 0.3.27",

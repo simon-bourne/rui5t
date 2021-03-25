@@ -11,4 +11,5 @@ mox = { path = "../../../my-forks/moxie/mox" }
 topo = { path = "../../../my-forks/moxie/topo" }
 moxie = { path = "../../../my-forks/moxie" }
 moxie-dom = { path = "../../../my-forks/moxie/dom" }
+augdom = { path = "../../../my-forks/moxie/dom/augdom" }
 wasm-bindgen = "0.2.45"
