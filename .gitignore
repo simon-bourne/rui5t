@@ -1,6 +1,7 @@
 /dist
 /crates/showcase/node_modules/
-/crates/showcase/pkg
-/target
+/crates/showcase/pkg/
+/crates/showcase/dist/
+/target/
 /.vscode/settings.json
 /wasm-pack.log
