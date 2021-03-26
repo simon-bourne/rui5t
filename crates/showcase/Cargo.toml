@@ -13,7 +13,7 @@ crate-type = ["cdylib"]
 [dependencies]
 rui5t = { path = "../rui5t" }
 wasm-bindgen = "0.2.45"
-moxie-dom = { path = "../../../my-forks/moxie/dom" }
+moxie-dom = { git = "https://github.com/simon-bourne/moxie.git", branch = "user-defined-html-elements" }
 
 [dependencies.web-sys]
 version = "0.3.22"

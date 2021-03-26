@@ -7,9 +7,9 @@ categories = ["wasm"]
 edition = "2018"
 
 [dependencies]
-mox = { path = "../../../my-forks/moxie/mox" }
-topo = { path = "../../../my-forks/moxie/topo" }
-moxie = { path = "../../../my-forks/moxie" }
-moxie-dom = { path = "../../../my-forks/moxie/dom" }
-augdom = { path = "../../../my-forks/moxie/dom/augdom" }
+mox = { git = "https://github.com/simon-bourne/moxie.git", branch = "user-defined-html-elements" }
+topo = { git = "https://github.com/simon-bourne/moxie.git", branch = "user-defined-html-elements" }
+moxie = { git = "https://github.com/simon-bourne/moxie.git", branch = "user-defined-html-elements" }
+moxie-dom = { git = "https://github.com/simon-bourne/moxie.git", branch = "user-defined-html-elements" }
+augdom = { git = "https://github.com/simon-bourne/moxie.git", branch = "user-defined-html-elements" }
 wasm-bindgen = "0.2.45"

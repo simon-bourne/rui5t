@@ -14,6 +14,7 @@ dependencies = [
 [[package]]
 name = "augdom"
 version = "0.2.0-pre"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "futures 0.3.13",
  "gloo-timers",
@@ -70,6 +71,7 @@ checksum = "9ea835d29036a4087793836fa931b08837ad5e957da9e23886b29586fb9b6650"
 [[package]]
 name = "dyn-cache"
 version = "0.12.1"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "downcast-rs",
  "hash_hasher",
@@ -219,6 +221,7 @@ dependencies = [
 [[package]]
 name = "illicit"
 version = "1.1.2"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "illicit-macro",
  "owning_ref",
@@ -228,6 +231,7 @@ dependencies = [
 [[package]]
 name = "illicit-macro"
 version = "1.0.0"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "proc-macro-error",
  "quote 1.0.9",
@@ -294,6 +298,7 @@ checksum = "0ee1c47aaa256ecabcaea351eae4a9b01ef39ed810004e298d2511ed284b1525"
 [[package]]
 name = "mox"
 version = "0.12.0"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "proc-macro2 1.0.24",
  "quote 1.0.9",
@@ -304,6 +309,7 @@ dependencies = [
 [[package]]
 name = "moxie"
 version = "0.7.1-pre"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "dyn-cache",
  "futures 0.3.13",
@@ -318,6 +324,7 @@ dependencies = [
 [[package]]
 name = "moxie-dom"
 version = "0.3.0-pre"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "augdom",
  "futures 0.3.13",
@@ -334,6 +341,7 @@ dependencies = [
 [[package]]
 name = "moxie-macros"
 version = "0.1.0-pre"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "quote 1.0.9",
  "syn",
@@ -400,6 +408,7 @@ checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 [[package]]
 name = "prettiest"
 version = "0.2.1"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "js-sys",
  "scopeguard",
@@ -491,6 +500,7 @@ dependencies = [
 [[package]]
 name = "raf"
 version = "0.2.0-pre"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "futures 0.3.13",
  "wasm-bindgen",
@@ -594,6 +604,7 @@ dependencies = [
 [[package]]
 name = "topo"
 version = "0.13.2"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "dyn-cache",
  "illicit",
@@ -605,6 +616,7 @@ dependencies = [
 [[package]]
 name = "topo-macro"
 version = "0.10.0"
+source = "git+https://github.com/simon-bourne/moxie.git?branch=user-defined-html-elements#e0efbc022f6aaea0be7af7c4b5eb848bdf1e14bd"
 dependencies = [
  "quote 1.0.9",
  "syn",
