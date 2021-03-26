@@ -1,0 +1,5 @@
+[build]
+base = "crates/showcase/"
+publish = "dist/"
+command = "npm run build"
+environment = { NODE_VERSION = "14.16.0" }
