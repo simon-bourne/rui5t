@@ -1,12 +1,18 @@
-use moxie_dom::interfaces::{
-    content_categories::FlowContent,
-    node::{Child, NodeBuilder, Parent},
+use moxie_dom::{
+    interfaces::{
+        content_categories::FlowContent,
+        node::{Child, NodeBuilder, Parent},
+    },
+    prelude::ElementBuilder,
 };
 
 // TODO: Which functions should be made topo::nested?
 
 mod raw {
+    // TODO: This is required to get `custom_events` to compile.
+    // Need to fix in `html_elements!`.
     use moxie_dom::html_element;
+    use wasm_bindgen::prelude::wasm_bindgen;
 
     html_element! {
         <ui5-side-navigation>
@@ -17,6 +23,16 @@ mod raw {
 
         attributes {
             collapsed(bool)
+        }
+
+        custom_events {
+            selection-change
+        }
+    }
+
+    impl CustomSelectionChange {
+        pub fn index(&self) -> usize {
+            todo!("Lookup the id on self.0.detail() and convert to int")
         }
     }
 
@@ -40,6 +56,7 @@ mod raw {
 use raw::{
     ui5_side_navigation,
     ui5_side_navigation_item,
+    CustomSelectionChange,
     Ui5SideNavigationBuilder,
     Ui5SideNavigationItemBuilder,
 };
@@ -53,12 +70,24 @@ impl SideNavigation {
         Self(
             items
                 .into_iter()
-                .fold(ui5_side_navigation(), |side_nav, i| side_nav.child(i)),
+                .enumerate()
+                .fold(ui5_side_navigation(), |side_nav, (i, child_item)| {
+                    side_nav.child(child_item.0.id(i))
+                }),
         )
     }
 
-    pub fn collapsed(self) -> SideNavigation {
+    pub fn collapsed(self) -> Self {
         Self(self.0.collapsed(true))
+    }
+
+    // TODO: Specify an id when adding item (generic param on SideNavigation).
+    // This should extract that info from the event and send it to the callback.
+    pub fn on_selection(self, mut callback: impl FnMut(CustomSelectionChange) + 'static) -> Self {
+        Self(self.0.on_selection_change(move |event| {
+            // TODO: Figure out which item was clicked, rather than sending raw js object
+            callback(event);
+        }))
     }
 }
 
@@ -88,7 +117,8 @@ impl Item {
 impl NodeBuilder for SideNavigation {
     type Target = Self;
 
-    // TODO: Take a good look at the internals of moxie, and understand how this works.
+    // TODO: Take a good look at the internals of moxie, and understand how this
+    // works.
     #[topo::nested]
     fn build(self) -> Self::Target {
         self
